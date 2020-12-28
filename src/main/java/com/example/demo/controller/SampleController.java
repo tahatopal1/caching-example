@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SampleController {
     @GetMapping(value = "/caching", produces = MediaType.APPLICATION_JSON_VALUE)
     @Cacheable("sample") // Caches the result unless the parameter changes
-    public ResponseEntity<String> getBookFromGoogle(@RequestParam String q) throws InterruptedException {
+    public ResponseEntity<String> getSampleData(@RequestParam String q) throws InterruptedException {
         Thread.sleep(5000); // Indicates if the result is cached or not
         return ResponseEntity.ok(q);
     }
